@@ -20,11 +20,13 @@ or
 $ python3 app.py --file ./email_samples/my_email.eml
 ```
 
+```bash
 optional arguments:
   -h, --help   show this help message and exit
   --stdin      listens on stdin for an email file
   --file FILE  supply path to email file
-  
+```
+
 ## Roadmap
 
 * Needs testing against a larger sample pool of email files and email file types.
