@@ -1,10 +1,12 @@
 # email_parser
 
-This script was developed to accept an email file as input, to automatically extract links and attachments for further processing with other tools/APIs.
+This application was developed as a project to showcase various language specific techniques to prospective employers, whilst also being a useful tool within the cyber security field.
 
-Links will be output to a file called 'extracted_links.txt' in the same directory as the script.
-Attachments will be extracted to the same directory as the script.
-Zipped attachments will be automatically unzipped and extracted.
+This application takes with a single email file (currently only tested against .eml file extensions), or a directory of email files. Each file will be instantiated into an object, and examined for any embedded links or attachments.
+
+If a Virustotal API key is provided, the extracted links and/or attachments will be synchronously queried for any known malicious links.
+
+If the '--write_attachments' flag is specified, any identified attachments will be written to a results directory for further analysis. Additionally, if the email file contains a zipped attachment, it will unzip and extract the original file.
 
 Note: this is still a work in progress.
 
@@ -12,29 +14,45 @@ Note: this is still a work in progress.
 
 The email parser script accepts two variations of ingesting an email file. One is to pass through STDIN, so that other applications can pass the email file in memory. The second is passing in a path & filename as shown below.
 
+Setup dependencies and run
 ```bash
-$ python3 app.py --stdin
-```
-or
-```bash
-$ python3 app.py --file ./email_samples/my_email.eml
+$ pipenv shell
+$ pipenv install
+$ python3 -m emailparser -h
 ```
 
+Menu Options
 ```bash
+usage: __main__.py [-h] [--stdin] [--file FILE] [--out-file OUT_FILE]
+                   [--write_attachments] [--vt_api VT_API]
+
 optional arguments:
-  -h, --help   show this help message and exit
-  --stdin      listens on stdin for an email file
-  --file FILE  supply path to email file
+  -h, --help           show this help message and exit
+  --stdin              listens on stdin for an email file
+  --file FILE          supply path to email file
+  --out-file OUT_FILE  name of directory to store the results
+  --write_attachments  select flag to indicate you wish for any attachments to
+                       be written to disk
+  --vt_api VT_API      provide API key for virustotal if reputational stats
+                       are required
 ```
+
+## Techniques Used
+
+* CLI Arguments
+* JSON encoding
+* OOP
+* Decorators
+* Collection Deque
+* Asyncio
+* Error Handling
 
 ## Roadmap
 
-* Needs testing against a larger sample pool of email files and email file types.
-* All the various ways a link can be supplied in an email need to be explored and added to the script.
-* Add detections for suspicious occurrences, such as:
-    - an image tag pointing to an executable URL e.g. .php
-    - differences in the from & reply-to fields (possible spoofing) - needs research/testing
-    - and many more :)
+* Add unittests for the EmailFile class object
+* Finish stdin/stdout functionality
+  * To be able to accept stream from another application and return results
+* Test link/attachment identification functions against a larger sample pool
 
 ## Contributing
 
