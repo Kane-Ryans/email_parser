@@ -4,6 +4,8 @@ This application was developed as a project to showcase various language specifi
 
 This application takes with a single email file (currently only tested against .eml file extensions), or a directory of email files. Each file will be instantiated into an object, and examined for any embedded links or attachments.
 
+If a directory is supplied, the application will asynchronously load all email files within and instantiate the class object. This was implemented to practice the technique, and for quicker load times when working with a large repository.
+
 If a Virustotal API key is provided, the extracted links and/or attachments will be synchronously queried for any known malicious links.
 
 If the '--write_attachments' flag is specified, any identified attachments will be written to a results directory for further analysis. Additionally, if the email file contains a zipped attachment, it will unzip and extract the original file.
