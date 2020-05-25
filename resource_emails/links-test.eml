@@ -1,0 +1,27 @@
+MIME-Version: 1.0
+Date: Sat, 4 Apr 2020 09:08:56 +0200
+Message-ID: <CAHFRgKcB5rnfq-gv0B04vBGzV4ocxQy_ksxTwnn_Pb85GVJdzg@mail.gmail.com>
+Subject: links-test
+From: Kane Ryans <kan3ryans@gmail.com>
+To: Kane Ryans <kan3ryans@gmail.com>
+Content-Type: multipart/alternative; boundary="0000000000001f66cf05a271b5be"
+
+--0000000000001f66cf05a271b5be
+Content-Type: text/plain; charset="UTF-8"
+
+hey,
+
+some links to test the script: click here 1
+<http://j.mp/Docxs_NFeBoleto> & click
+here 2 <http://www.ica.ufmg.br/rha/images/pdf.php>
+
+--0000000000001f66cf05a271b5be
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">hey,=C2=A0<div><br></div><div>some links to test the scrip=
+t:=C2=A0<a href=3D"http://j.mp/Docxs_NFeBoleto">click here 1</a>=C2=A0&amp;=
+=C2=A0<a href=3D"http://www.ica.ufmg.br/rha/images/pdf.php">click here 2</a=
+><br></div></div>
+
+--0000000000001f66cf05a271b5be--
